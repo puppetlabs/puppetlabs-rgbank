@@ -3,6 +3,15 @@ define rgbank::db (
   $password,
   $mock_sql_source = hiera('rgbank-mock-sql-path', ''),
 ) {
+
+  class { '::mysql::server':
+    override_options => {
+      'mysqld' => {
+        'bind-address' => '0.0.0.0',
+      },
+    },
+  }
+
   $db_name = "rgbank-${name}"
 
   file { "/var/lib/${db_name}":
