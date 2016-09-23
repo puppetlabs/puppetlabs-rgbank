@@ -31,7 +31,7 @@ application rgbank (
 
   rgbank::load { $load_component:
     balancermembers => $web_https,
-    port            => $serve_port,
+    port            => $listen_port,
     require         => $web_https,
     export          => Http[$load_component],
   }
