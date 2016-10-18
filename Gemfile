@@ -25,7 +25,7 @@ group :development, :unit_tests do
   gem 'rspec-puppet', '>= 2.4.0', :git => 'https://github.com/rodjek/rspec-puppet.git',
                                   :ref => 'd1a7233eec08a2c605b623ced2b863c5ea4b37df'
   gem 'rspec-puppet-facts'
-  gem 'parallel_tests'
+  gem 'parallel_tests', '2.9.0' if RUBY_VERSION < '2.0.0'
   gem 'rubocop', '0.41.2' if RUBY_VERSION < '2.0.0'
   gem 'rubocop' if RUBY_VERSION >= '2.0.0'
   gem 'rubocop-rspec', '~> 1.6' if RUBY_VERSION >= '2.3.0'
