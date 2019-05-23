@@ -11,9 +11,7 @@ define rgbank::web (
   $install_dir = undef,
   $image_tag = 'latest',
   $enable_header = hiera('rgbank::web::enable_header', false),
-  $use_docker = false,
 ) {
-  if $use_docker {
     rgbank::web::base { $name:
       ensure => absent,
     }
@@ -25,20 +23,6 @@ define rgbank::web (
       db_host     => $db_host,
       image_tag   => $image_tag,
       listen_port => $listen_port,
-    }
-  } else {
-    rgbank::web::base { $name:
-      db_name            => $db_name,
-      db_user            => $db_user,
-      db_password        => $db_password,
-      db_host            => $db_host,
-      version            => $version,
-      source             => $source,
-      source_type        => $source_type,
-      listen_port        => $listen_port,
-      install_dir        => $install_dir,
-      enable_header      => $enable_header,
-      artifactory_server => $artifactory_server,
     }
 
     if $::selinux == true {
