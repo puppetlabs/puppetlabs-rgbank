@@ -11,8 +11,8 @@ plan rgbank::develop(
     
   } else {
     $nodes = [$db_node, $app_node]
-    $_db_node = $db_node
-    $_app_node = $app_node
+    $_db_node = get_target($db_node)
+    $_app_node = get_target($app_node)
   }
   wait_until_available($nodes)
 
@@ -50,6 +50,6 @@ plan rgbank::develop(
     'rgbank_app' => "http://${_app_node}:8080",
     'db_node'    => $_db_node,
     'app_node'   => $_app_node,
-    'update_cmd' => "bolt plan run rgbank::develop db_node=${_db_node} app_node=${_app_node}"
+    'update_cmd' => "bolt plan run rgbank::develop db_node=${_db_node} app_node=${_app_node} provision=false"
   })
 }
