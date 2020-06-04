@@ -57,7 +57,7 @@ define rgbank::web::base(
       wp_content_owner     => nginx,
       wp_content_group     => nginx,
       wp_content_recurse   => true,
-      wp_site_url          => "http://${ec2_metadata['public-hostname']}:${listen_port}",
+      wp_site_url          => "http://${site_url}:${listen_port}",
     }
 
     case $source_type {
