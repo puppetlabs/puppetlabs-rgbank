@@ -16,7 +16,6 @@ class rgbank::web (
   $site_url = lookup('rgbank::site_url', String, first, 'localhost'),
 ) {
 
-  fail("SITE_URL: ${site_url}")
   if $use_docker {
     rgbank::web::base { $site_name:
       ensure => absent,
