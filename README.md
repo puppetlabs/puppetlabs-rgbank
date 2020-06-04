@@ -63,5 +63,3 @@ rgbank { 'getting-started':
   },
 }
 ```
-
-LINE
