@@ -13,7 +13,9 @@ class rgbank::web (
   $image_tag = 'latest',
   $enable_header = lookup('rgbank::web::enable_header', default => false),
   $use_docker = false,
+  $site_url = lookup('rgbank::site_url', String, first, 'localhost'),
 ) {
+
   if $use_docker {
     rgbank::web::base { $site_name:
       ensure => absent,
@@ -40,6 +42,7 @@ class rgbank::web (
       install_dir        => $install_dir,
       enable_header      => $enable_header,
       artifactory_server => $artifactory_server,
+      site_url           => $site_url,
     }
 
     if $::selinux == true {

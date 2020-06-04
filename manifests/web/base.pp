@@ -12,6 +12,7 @@ define rgbank::web::base(
   $custom_wp_config = undef,
   $enable_header = false,
   $artifactory_server = undef,
+  $site_url = undef,
 ) {
   if $install_dir {
     $install_dir_real = $install_dir
