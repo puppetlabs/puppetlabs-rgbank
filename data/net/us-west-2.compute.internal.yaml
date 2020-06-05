@@ -1,0 +1,2 @@
+---
+rgbank::site_url: "%{ec2_metadata.public-hostname}"

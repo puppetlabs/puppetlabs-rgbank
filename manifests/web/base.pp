@@ -12,6 +12,7 @@ define rgbank::web::base(
   $custom_wp_config = undef,
   $enable_header = false,
   $artifactory_server = undef,
+  $site_url = undef,
 ) {
   if $install_dir {
     $install_dir_real = $install_dir
@@ -56,7 +57,7 @@ define rgbank::web::base(
       wp_content_owner     => nginx,
       wp_content_group     => nginx,
       wp_content_recurse   => true,
-      wp_site_url          => "http://${ec2_metadata['public-hostname']}:${listen_port}",
+      wp_site_url          => "http://${site_url}:${listen_port}",
     }
 
     case $source_type {
