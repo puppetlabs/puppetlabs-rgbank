@@ -1,5 +1,7 @@
 ---
 name: "rgbank"
+tasks:
+  - "servicenow_tasks::create_record"
 plans:
   - "dev_env::provision"
   - "dev_env::deprovision"
