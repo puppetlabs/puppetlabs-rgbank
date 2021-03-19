@@ -1,0 +1,8 @@
+---
+  rules:
+    - name: "RG Bank web application nodes"
+      groups: "rgbank"
+    - name: "RG Bank DB nodes"
+      targets:
+
+    
