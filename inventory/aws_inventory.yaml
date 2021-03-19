@@ -1,0 +1,12 @@
+name: aws
+targets:
+  - _plugin: aws_inventory
+    region: us-west-2
+    target_mapping:
+      uri: public_dns_name
+config:
+  transport: ssh
+  ssh:
+    user: centos
+    private-key: ~/.ssh/id_rsa-acceptance
+    host-key-check: false

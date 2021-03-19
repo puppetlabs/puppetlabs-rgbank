@@ -1,0 +1,13 @@
+---
+name: "rgbank"
+plans:
+  - "dev_env::provision"
+  - "dev_env::deprovision"
+  - "terraform::apply"
+  - "terraform::destroy"
+  - "rgbank::develop"
+roles:
+  - "rgbank"
+  - "rgbank::web"
+  - "rgbank::db" 
+  - "rgbank::docker"

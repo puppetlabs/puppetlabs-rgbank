@@ -1,0 +1,59 @@
+groups:
+  - _plugin: yaml
+    filepath: inventory/aws_inventory.yaml
+  - name: rgbank
+    config:
+      transport: ssh
+      ssh:
+        host-key-check: false
+  - name: windows
+    config:
+      transport: winrm
+      winrm:
+        user: Administrator
+        password: Qu@lity!
+        ssl-verify: false
+  # This group can be used to connect to the AWS instances provisioned
+  # by Terraform once the dev_env::provision plan has been run. When
+  # the instances are not provisioned, this will just be an empty list.
+  - name: terraform
+    targets:
+      - _plugin: terraform
+        dir: terraform
+        state: terraform.tfstate
+        resource_type: aws_instance
+        target_mapping:
+          uri: public_dns
+    config:
+      transport: ssh
+      ssh:
+        user: centos
+        run-as: root
+        host-key-check: false
+        private-key: ~/.ssh/id_rsa-acceptance
+
+targets:
+  - uri: 10.234.3.30
+    config:
+      transport: ssh
+      ssh:
+        user: centos
+        private-key: ~/.ssh/id_rsa-acceptance
+        host-key-check: false
+  - uri: ec2-54-218-180-38.us-west-2.compute.amazonaws.com
+    config:
+      transport: pcp
+    #      ssh:
+    #        user: centos
+    #        private-key: ~/.ssh/id_rsa
+    #        host-key-check: false
+    #        #token-file: /Users/carlcaum/.puppetlabs/token-ec2
+    #        #cacert: /Users/carlcaum/.puppetlabs/ec2-ca.crt
+    #        #service-url: https:///ec2-54-218-180-38.us-west-2.compute.amazonaws.com:8143
+
+#config:
+#  transport: pcp
+#  pcp:
+#    token-file: /Users/carlcaum/.puppetlabs/token-ec2
+#    cacert: /Users/carlcaum/.puppetlabs/ec2-ca.crt
+#    service-url: https:///ec2-54-218-180-38.us-west-2.compute.amazonaws.com:8143

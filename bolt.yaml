@@ -1,0 +1,11 @@
+#puppetdb:
+#  server_urls: ["ec2-54-218-180-38.us-west-2.compute.amazonaws.com:8081"]
+#  cacert: /Users/carlcaum/.puppetlabs/ec2-ca.crt
+#  token: /Users/carlcaum/.puppetlabs/token-ec2
+pcp:
+  token-file: /Users/carlcaum/.puppetlabs/token-ec2
+  cacert: /Users/carlcaum/.puppetlabs/ec2-ca.crt
+  service-url: https://ec2-54-218-180-38.us-west-2.compute.amazonaws.com:8143
+modulepath:
+  - "./site-modules"
+  - "./modules"
