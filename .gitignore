@@ -30,3 +30,4 @@ terraform/.terraform
 *backup
 *tfstate
 modules/
+bolt-debug.log
