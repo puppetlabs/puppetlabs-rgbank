@@ -1,4 +1,3 @@
-groups:
 targets:
   - uri: 10.234.3.30
     config:
