@@ -4,7 +4,7 @@ plan rgbank::develop(
   Boolean $provision = true,
 ) {
   if $provision {
-    $nodes = run_plan('dev_env', count => 2, role => 'rgbank_base')
+    $nodes = run_plan('development_environment', count => 2, role => 'rgbank_base')
 
     $_db_node = $nodes[0]
     $_app_node = $nodes[1]

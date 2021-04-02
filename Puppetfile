@@ -13,7 +13,7 @@ mod 'wordpress',
 
 mod 'development_environment',
   :git => 'http://cdpe-carl-docker.delivery.puppetlabs.net/ccaum/development-environment.git',
-  :tag => 'v1.0'
+  :tag => '1.0.0'
 
 mod 'puppetlabs/haproxy', '1.5.0'
 mod 'puppetlabs-apt', '7.4.0'
