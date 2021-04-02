@@ -31,3 +31,4 @@ terraform/.terraform
 *tfstate
 modules/
 bolt-debug.log
+.modules
