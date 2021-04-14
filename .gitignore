@@ -32,3 +32,4 @@ terraform/.terraform
 modules/
 bolt-debug.log
 .modules
+.plan_cache.json

@@ -21,3 +21,9 @@ mod 'puppet/zypprepo', '2.2.2'
 mod 'puppetlabs/translate', '2.2.0'
 mod 'puppetlabs/powershell', '5.0.0'
 mod 'puppetlabs/pwshlib', '0.8.0'
+mod 'wordpress',
+  git: 'http://cdpe-carl-docker.delivery.puppetlabs.net/ccaum/puppet-wordpress.git',
+  ref: 'master'
+mod 'development_environment',
+  git: 'http://cdpe-carl-docker.delivery.puppetlabs.net/ccaum/development-environment.git',
+  ref: '1.0.1'
