@@ -28,3 +28,11 @@ modules:
   version_requirement: 4.4.0
 - name: reidmv/unzip
   version_requirement: 0.1.2
+- name: 'development_environment'
+  git: 'http://cdpe-carl-docker.delivery.puppetlabs.net/ccaum/development-environment.git'
+  ref: 1.0.1
+  resolve: false
+- name: 'wordpress'
+  git: 'http://cdpe-carl-docker.delivery.puppetlabs.net/ccaum/puppet-wordpress.git'
+  ref: master
+  resolve: false
